@@ -95,7 +95,7 @@
           <div class="stat-card">
             <div class="stat-body">
               <strong class="stat-num">2M+</strong>
-              <span class="stat-label">Survey records aggregated</span>
+              <span class="stat-label">Production responses validated</span>
             </div>
             <span class="stat-index">02</span>
           </div>
@@ -355,8 +355,8 @@
         <h3>Quantified Impact</h3>
         <div class="highlight-list">
           <div class="highlight-row">
-            <strong>2M+</strong>
-            <span>survey response records aggregated on new OpenSearch &rarr; ClickHouse OLAP schema</span>
+            <strong>~10s &rarr; 1-2s</strong>
+            <span>respondent-analytics aggregation after OpenSearch &rarr; ClickHouse migration (validated on 2M+ responses)</span>
           </div>
           <div class="highlight-row">
             <strong>10x</strong>
@@ -405,18 +405,18 @@
         <h3 class="exp-role">Backend Software Engineer</h3>
         <span class="exp-company"><svg viewBox="0 0 24 24" class="row-ico-sm"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Sun Asterisk</span>
         <p class="exp-desc">
-          Proposed and led the migration of survey analytics from OpenSearch to ClickHouse for a
-          Japanese survey research client, and adapted an internal AI-assisted delivery workflow
+          Proposed and led a rebuild of the respondent-analytics module for a Japanese client,
+          migrating OpenSearch to ClickHouse, and adapted an internal AI-assisted delivery workflow
           (AI-DD) to verify AI-generated design documents before they reach developers.
         </p>
         <div class="tag-list tag-list-sm">
-          <span class="tag tag-accent">Survey Analytics</span>
+          <span class="tag tag-accent">Respondent Analytics</span>
           <span class="tag tag-accent">ClickHouse Migration</span>
           <span class="tag tag-accent">AI-DD</span>
         </div>
         <ul class="bullet-list">
-          <li>Redesigned a document-oriented data model into a columnar OLAP schema, accelerating aggregation across 2M+ survey response records.</li>
-          <li>Audited AI-generated design documents for 66 screens, flagging unsupported content in 65 of them and adding source-commit traceability for verification.</li>
+          <li>Migrated the respondent-analytics module from document-oriented OpenSearch to a columnar ClickHouse OLAP schema; validated on a full production data copy (2M+ responses), cutting aggregation from ~10s to 1-2s.</li>
+          <li>Added source-commit traceability so every AI-generated design document is verified against its origin before reaching developers, catching unsupported content before it causes downstream rework.</li>
         </ul>
         <div class="tech-tags">
           <span>ClickHouse</span><span>OpenSearch</span><span>AI-DD Tooling</span><span>Node.js</span>
