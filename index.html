@@ -73,9 +73,9 @@
           </div>
 
           <p class="hero-desc">
-            Building scalable, fault-tolerant backend systems with 3+ years of experience in
-            API performance, database efficiency, and clean, maintainable architecture that
-            supports long-term system growth and reliability.
+            Building backend systems with 3+ years of experience in Node.js/NestJS services.
+            Reduced a clinic-classification query from ~600ms to ~40ms and redesigned an
+            analytics pipeline over 300M+ survey records for consistent 1-2s aggregations.
           </p>
 
           <div class="hero-actions">
@@ -95,14 +95,14 @@
           <div class="stat-card">
             <div class="stat-body">
               <strong class="stat-num">1-2s</strong>
-              <span class="stat-label">Aggregation time (from ~10s)</span>
+              <span class="stat-label">Aggregation across 300M+ records</span>
             </div>
             <span class="stat-index">02</span>
           </div>
           <div class="stat-card">
             <div class="stat-body">
-              <strong class="stat-num">10x</strong>
-              <span class="stat-label">Faster search response</span>
+              <strong class="stat-num">~600ms &rarr; ~40ms</strong>
+              <span class="stat-label">Key query optimized</span>
             </div>
             <span class="stat-index">03</span>
           </div>
@@ -155,11 +155,11 @@
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         <span>PostgreSQL</span><i>&#10022;</i><span>MongoDB</span><i>&#10022;</i><span>Redis</span><i>&#10022;</i>
-        <span>RabbitMQ</span><i>&#10022;</i><span>Kafka</span><i>&#10022;</i><span>gRPC</span><i>&#10022;</i>
+        <span>BullMQ</span><i>&#10022;</i><span>Kafka</span><i>&#10022;</i><span>gRPC</span><i>&#10022;</i>
         <span>WebSocket</span><i>&#10022;</i><span>NestJS</span><i>&#10022;</i><span>TypeScript</span><i>&#10022;</i>
         <span>Docker</span><i>&#10022;</i><span>CI/CD</span><i>&#10022;</i>
         <span>PostgreSQL</span><i>&#10022;</i><span>MongoDB</span><i>&#10022;</i><span>Redis</span><i>&#10022;</i>
-        <span>RabbitMQ</span><i>&#10022;</i><span>Kafka</span><i>&#10022;</i><span>gRPC</span><i>&#10022;</i>
+        <span>BullMQ</span><i>&#10022;</i><span>Kafka</span><i>&#10022;</i><span>gRPC</span><i>&#10022;</i>
         <span>WebSocket</span><i>&#10022;</i><span>NestJS</span><i>&#10022;</i><span>TypeScript</span><i>&#10022;</i>
         <span>Docker</span><i>&#10022;</i><span>CI/CD</span><i>&#10022;</i>
       </div>
@@ -211,9 +211,10 @@
       <div class="card bio-card">
         <p>
           I'm a Backend Software Engineer with over <strong>3 years of experience</strong> building
-          scalable and fault-tolerant web applications. My focus is on API performance, database
-          efficiency, and clean, maintainable architecture that supports long-term system growth
-          and reliability &mdash; delivered under Agile/Scrum practices.
+          Node.js/NestJS services. I've reduced a clinic-classification query from ~600ms to ~40ms
+          and redesigned an analytics pipeline over 300M+ survey records for consistent 1-2s
+          aggregations &mdash; with a focus on database efficiency and clean, maintainable
+          architecture.
         </p>
         <p>
           At Sun Asterisk, I use an internal AI-Driven Development (AI-DD) workflow to audit
@@ -288,6 +289,8 @@
         </div>
         <div class="tag-list">
           <span class="tag">PostgreSQL</span>
+          <span class="tag">ClickHouse</span>
+          <span class="tag">OpenSearch</span>
           <span class="tag">MongoDB</span>
           <span class="tag">Redis</span>
           <span class="tag">Prisma</span>
@@ -301,7 +304,7 @@
           <h3>Messaging &amp; APIs</h3>
         </div>
         <div class="tag-list">
-          <span class="tag">RabbitMQ</span>
+          <span class="tag">BullMQ</span>
           <span class="tag">Kafka</span>
           <span class="tag">REST</span>
           <span class="tag">gRPC</span>
@@ -344,10 +347,10 @@
           <li><i>02</i>Test-Driven Development (TDD)</li>
           <li><i>03</i>AI-Driven Development (AI-DD)</li>
           <li><i>04</i>Clean / Layered Architecture</li>
-          <li><i>05</i>Domain-Driven Design (DDD)</li>
-          <li><i>06</i>CQRS</li>
-          <li><i>07</i>Event-driven Design</li>
-          <li><i>08</i>Microservices</li>
+          <li><i>05</i>Modular Monolith</li>
+          <li><i>06</i>Domain-Driven Design (DDD)</li>
+          <li><i>07</i>CQRS</li>
+          <li><i>08</i>Event-driven Design</li>
         </ul>
       </div>
 
@@ -355,16 +358,16 @@
         <h3>Quantified Impact</h3>
         <div class="highlight-list">
           <div class="highlight-row">
-            <strong>~10s &rarr; 1-2s</strong>
-            <span>respondent-analytics aggregation after OpenSearch &rarr; ClickHouse migration (validated on 2M+ responses)</span>
+            <strong>~600ms &rarr; ~40ms</strong>
+            <span>clinic classification query time after partitioning</span>
+          </div>
+          <div class="highlight-row">
+            <strong>300M+</strong>
+            <span>survey records analyzed per query, consistent 1-2s aggregation (was frequent timeouts)</span>
           </div>
           <div class="highlight-row">
             <strong>10x</strong>
             <span>faster full-text search via PostgreSQL tsvector + GIN</span>
-          </div>
-          <div class="highlight-row">
-            <strong>~600ms &rarr; ~40ms</strong>
-            <span>clinic classification query time after partitioning</span>
           </div>
           <div class="highlight-row">
             <strong>100K+</strong>
@@ -379,8 +382,9 @@
           <li><i>01</i>System &amp; API design</li>
           <li><i>02</i>Query &amp; index optimization</li>
           <li><i>03</i>Debugging methodologies</li>
-          <li><i>04</i>Load testing (k6, Artillery)</li>
-          <li><i>05</i>AI tools (ChatGPT, Cursor) for coding &amp; docs</li>
+          <li><i>04</i>Transactional outbox &amp; message relay patterns</li>
+          <li><i>05</i>Load testing (k6, Artillery)</li>
+          <li><i>06</i>AI tools (ChatGPT, Cursor) for coding &amp; docs</li>
         </ul>
       </div>
     </div>
@@ -415,7 +419,7 @@
           <span class="tag tag-accent">AI-DD</span>
         </div>
         <ul class="bullet-list">
-          <li>Migrated the respondent-analytics module from document-oriented OpenSearch to a columnar ClickHouse OLAP schema; validated on a full production data copy (2M+ responses), cutting aggregation from ~10s to 1-2s.</li>
+          <li>Replaced OpenSearch parent-child aggregation queries on a single unpartitioned index with a ClickHouse columnar table partitioned by year, validated against a 300M+ row production copy spanning 50+ years of survey data &mdash; eliminating recurring query timeouts and cutting typical aggregation latency to a consistent 1-2s.</li>
           <li>Added source-commit traceability so every AI-generated design document is verified against its origin before reaching developers, catching unsupported content before it causes downstream rework.</li>
         </ul>
         <div class="tech-tags">
@@ -430,8 +434,9 @@
         <h3 class="exp-role">Backend Software Engineer</h3>
         <span class="exp-company"><svg viewBox="0 0 24 24" class="row-ico-sm"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Fenik Technologies</span>
         <p class="exp-desc">
-          Developed backend services for a dental-clinic discovery and review platform serving
-          100,000+ monthly visits, with a focus on search performance and query optimization.
+          Developed and maintained backend services for a dental-clinic discovery and review
+          platform serving 100,000+ monthly visits, with a focus on search performance and
+          query optimization.
         </p>
         <div class="tag-list tag-list-sm">
           <span class="tag tag-accent">Dental Platform</span>
@@ -468,10 +473,10 @@
         </p>
         <ul class="bullet-list">
           <li>NestJS modular-monolith core API, Socket.IO gateway, LiveKit SFU, and a Next.js client.</li>
-          <li>Kept new business domains as core-api modules by default rather than splitting prematurely, with k6/Artillery load tests prepared for future scaling validation; runs today on free-tier hosted infrastructure (Northflank, Cloudflare, LiveKit Cloud), with Kubernetes overlays ready for self-hosted scale-out.</li>
+          <li>Solved the dual-write problem for diamond/VIP transactions with a transactional outbox: business writes commit atomically with an outbox row, then a relay job (Postgres FOR UPDATE SKIP LOCKED, safe across concurrent instances) publishes to Kafka and marks it sent &mdash; so pending events remain retryable after failures instead of being silently lost.</li>
         </ul>
         <div class="tech-tags">
-          <span>NestJS</span><span>Socket.IO</span><span>LiveKit</span><span>Next.js</span><span>Northflank</span><span>Cloudflare</span>
+          <span>NestJS</span><span>Socket.IO</span><span>LiveKit</span><span>Next.js</span><span>Kafka</span><span>PostgreSQL</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/ducmanh001/litmatch" target="_blank" rel="noopener">
