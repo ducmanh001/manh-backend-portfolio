@@ -95,7 +95,7 @@
           <div class="stat-card">
             <div class="stat-body">
               <strong class="stat-num">1-2s</strong>
-              <span class="stat-label">Aggregation across 300M+ records</span>
+              <span class="stat-label">Typical query (300M+ row benchmark)</span>
             </div>
             <span class="stat-index">02</span>
           </div>
@@ -363,7 +363,7 @@
           </div>
           <div class="highlight-row">
             <strong>300M+</strong>
-            <span>survey records analyzed per query, consistent 1-2s aggregation (was frequent timeouts)</span>
+            <span>row production-data copy benchmarked; typical aggregations complete in 1-2s (was frequent timeouts)</span>
           </div>
           <div class="highlight-row">
             <strong>10x</strong>
@@ -475,6 +475,18 @@
           <li>NestJS modular-monolith core API, Socket.IO gateway, LiveKit SFU, and a Next.js client.</li>
           <li>Solved the dual-write problem for diamond/VIP transactions with a transactional outbox: business writes commit atomically with an outbox row, then a relay job (Postgres FOR UPDATE SKIP LOCKED, safe across concurrent instances) publishes to Kafka and marks it sent &mdash; so pending events remain retryable after failures instead of being silently lost.</li>
         </ul>
+        <div class="flow-diagram" role="img" aria-label="Transactional outbox flow: business write, outbox row in the same transaction, relay job with SKIP LOCKED, Kafka publish, marked sent">
+          <span class="flow-step"><i>1</i>Business write</span>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="flow-step"><i>2</i>Outbox row (same TX)</span>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="flow-step"><i>3</i>Relay job (SKIP LOCKED)</span>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="flow-step"><i>4</i>Kafka publish</span>
+          <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="flow-step"><i>5</i>Marked sent</span>
+          <span class="flow-caption">transactional_outbox.flow &mdash; retries safely from the outbox if any step fails before "marked sent"</span>
+        </div>
         <div class="tech-tags">
           <span>NestJS</span><span>Socket.IO</span><span>LiveKit</span><span>Next.js</span><span>Kafka</span><span>PostgreSQL</span>
         </div>
@@ -501,11 +513,11 @@
           checkout, orders, reviews, and admin management.
         </p>
         <ul class="bullet-list">
-          <li>PostgreSQL/TypeORM migrations with Bull-queued email notifications; deployed to Railway with Docker and CI.</li>
+          <li>PostgreSQL/TypeORM migrations with BullMQ-queued email notifications; deployed to Railway with Docker and CI.</li>
           <li>Implemented transactional checkout with ordered row locks to reduce deadlock risk and idempotency keys to prevent duplicate order creation on retries.</li>
         </ul>
         <div class="tech-tags">
-          <span>NestJS</span><span>TypeORM</span><span>PostgreSQL</span><span>Bull</span><span>Railway</span>
+          <span>NestJS</span><span>TypeORM</span><span>PostgreSQL</span><span>BullMQ</span><span>Railway</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/ducmanh001/mini-shop-api" target="_blank" rel="noopener">
@@ -593,7 +605,7 @@
           <span><i class="field-num">03</i>YOUR MESSAGE</span>
           <textarea name="message" rows="5" placeholder="// Tell me about your project..." required></textarea>
         </label>
-        <button class="btn btn-primary btn-block" type="submit">Send Message <span aria-hidden="true">&rarr;</span></button>
+        <button class="btn btn-primary btn-block" type="submit">Open Email Draft <span aria-hidden="true">&rarr;</span></button>
         <p class="form-hint">Opens your email app with this message pre-filled &mdash; no server involved.</p>
       </form>
     </div>
