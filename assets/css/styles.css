@@ -319,17 +319,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   align-items: start;
 }
 
-.path-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--cyan);
-  background: color-mix(in srgb, var(--cyan) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--cyan) 25%, transparent);
-  padding: 7px 14px;
-  border-radius: 999px;
-  margin-bottom: 22px;
-}
 .eyebrow {
   font-family: var(--font-mono);
   letter-spacing: 0.16em;
@@ -499,22 +488,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- sections shared ---------- */
 .section { padding: 96px 24px; scroll-margin-top: 100px; }
-.section-crumb {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-dimmer);
-  margin-bottom: 18px;
-}
-.crumb-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cyan) 20%, transparent);
-}
-.crumb-dot.small { width: 6px; height: 6px; }
-.crumb-file { color: var(--text-dim); }
 .section-title {
   font-size: clamp(32px, 4vw, 48px);
   font-weight: 800;
@@ -544,24 +517,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   align-items: start;
 }
 .profile-card, .bio-card { padding: 30px; }
-.card-tag-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
-.file-tag {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-dim);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.file-tag-alt { color: var(--cyan); margin-bottom: 18px; }
-.version-badge {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--green);
-  border: 1px solid color-mix(in srgb, var(--green) 30%, transparent);
-  padding: 3px 9px;
-  border-radius: 999px;
-}
 .profile-head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
 .profile-avatar {
   position: relative;
@@ -695,7 +650,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .skills-grid-row2 { margin-top: 20px; }
 .skill-card { padding: 26px; }
-.skill-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--card-border); position: relative; }
+.skill-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--card-border); position: relative; }
 .skill-top::before {
   content: "";
   position: absolute;
@@ -716,8 +671,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #04121a;
   background: linear-gradient(135deg, var(--cyan), var(--blue));
 }
-.item-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-dimmer); }
-.skill-card h3 { font-size: 17px; margin: 0 0 16px; }
+.skill-top h3 { font-size: 17px; margin: 0; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 9px; }
 .tag {
   display: inline-flex;
@@ -743,11 +697,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tag-list-sm .tag { font-size: 12px; padding: 6px 11px; }
 
 .soft-card, .highlight-card, .other-card { padding: 26px; }
-.file-tag-badge { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-.chip { font-family: var(--font-mono); font-size: 10px; padding: 3px 9px; border-radius: 999px; letter-spacing: 0.06em; }
-.chip-human { color: var(--amber); border: 1px solid color-mix(in srgb, var(--amber) 35%, transparent); }
-.chip-global { color: var(--blue); border: 1px solid color-mix(in srgb, var(--blue) 35%, transparent); }
-.chip-bonus { color: var(--green); border: 1px solid color-mix(in srgb, var(--green) 35%, transparent); }
 .soft-card h3, .highlight-card h3, .other-card h3 { font-size: 17px; margin: 0 0 18px; }
 .check-list { display: flex; flex-direction: column; gap: 12px; }
 .check-list li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-dim); }
