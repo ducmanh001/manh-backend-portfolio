@@ -332,9 +332,39 @@
         </div>
         <div class="tag-list">
           <span class="tag">Docker</span>
+          <span class="tag">Kubernetes</span>
           <span class="tag">CI/CD</span>
           <span class="tag">DigitalOcean</span>
           <span class="tag">Git</span>
+        </div>
+      </article>
+
+      <article class="card skill-card">
+        <div class="skill-top bar-teal">
+          <span class="skill-index">07</span>
+          <h3>Observability</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag">OpenTelemetry</span>
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Sentry</span>
+          <span class="tag">PostHog</span>
+        </div>
+      </article>
+
+      <article class="card skill-card">
+        <div class="skill-top bar-warm">
+          <span class="skill-index">08</span>
+          <h3>Engineering Principles</h3>
+        </div>
+        <div class="tag-list">
+          <span class="tag">OOP</span>
+          <span class="tag">SOLID</span>
+          <span class="tag">DRY</span>
+          <span class="tag">KISS</span>
+          <span class="tag">YAGNI</span>
+          <span class="tag">Design Patterns</span>
         </div>
       </article>
     </div>
@@ -348,9 +378,10 @@
           <li><i>03</i>AI-Driven Development (AI-DD)</li>
           <li><i>04</i>Clean / Layered Architecture</li>
           <li><i>05</i>Modular Monolith</li>
-          <li><i>06</i>Domain-Driven Design (DDD)</li>
-          <li><i>07</i>CQRS</li>
-          <li><i>08</i>Event-driven Design</li>
+          <li><i>06</i>Microservices</li>
+          <li><i>07</i>Domain-Driven Design (DDD)</li>
+          <li><i>08</i>CQRS</li>
+          <li><i>09</i>Event-driven Design</li>
         </ul>
       </div>
 
@@ -474,6 +505,7 @@
         <ul class="bullet-list">
           <li>NestJS modular-monolith core API, Socket.IO gateway, LiveKit SFU, and a Next.js client.</li>
           <li>Solved the dual-write problem for diamond/VIP transactions with a transactional outbox: business writes commit atomically with an outbox row, then a relay job (Postgres FOR UPDATE SKIP LOCKED, safe across concurrent instances) publishes to Kafka and marks it sent &mdash; so pending events remain retryable after failures instead of being silently lost.</li>
+          <li>Built the matching engine as a sharded priority queue with a trust-score penalty and an idempotent diamond-priced boost, plus a two-sided confirm step that locks session and ticket in a fixed order to avoid deadlock.</li>
         </ul>
         <div class="flow-diagram" role="img" aria-label="Transactional outbox flow: business write, outbox row in the same transaction, relay job with SKIP LOCKED, Kafka publish, marked sent">
           <span class="flow-step"><i>1</i>Business write</span>
