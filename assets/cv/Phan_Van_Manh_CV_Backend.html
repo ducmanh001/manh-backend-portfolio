@@ -41,7 +41,7 @@ line-height: 1.17;
     letter-spacing: 0.3px;
     border-bottom: 1pt solid #000;
     padding-bottom: 1px;
-    margin: 6px 0 3px 0;
+    margin: 4px 0 2px 0;
   }
 
   .plain-line { margin: 1px 0; }
@@ -121,7 +121,8 @@ line-height: 1.17;
   <p class="plain-line"><b>Data</b>: PostgreSQL, ClickHouse, OpenSearch, MongoDB, Redis; Prisma, TypeORM</p>
   <p class="plain-line"><b>Messaging &amp; APIs</b>: BullMQ, Kafka; REST, gRPC, WebSocket</p>
   <p class="plain-line"><b>Testing</b>: Jest, Supertest, Cypress, Playwright</p>
-  <p class="plain-line"><b>Delivery</b>: Docker, CI/CD on DigitalOcean</p>
+  <p class="plain-line"><b>Delivery</b>: Docker, Kubernetes, CI/CD on DigitalOcean</p>
+  <p class="plain-line"><b>Observability</b>: OpenTelemetry (traces/metrics/logs), Prometheus, Grafana, Sentry, PostHog</p>
   <p class="plain-line"><b>Process</b>: Agile/Scrum, TDD, AI-Driven Development (AI-DD)</p>
   <p class="plain-line"><b>Principles</b>: OOP, SOLID, DRY, KISS, YAGNI, Design Patterns</p>
   <p class="plain-line"><b>Architecture</b>: Clean/Layered Architecture, Modular Monolith, Microservices, DDD, CQRS, Event-driven Design</p>
@@ -156,8 +157,9 @@ line-height: 1.17;
   </div>
   <div class="entry-link">GitHub: <a href="https://github.com/ducmanh001/litmatch">https://github.com/ducmanh001/litmatch</a> &nbsp;|&nbsp; Demo: <a href="https://litmatch-web.manhphan110801.workers.dev">https://litmatch-web.manhphan110801.workers.dev</a></div>
   <ul class="bullets">
-    <li>Solo-designed and built Litmatch - an anonymous social-entertainment platform (matching, voice/text chat, feed, mini-games, diamond/VIP economy) - as a NestJS modular-monolith monorepo (Socket.IO gateway, LiveKit SFU, Next.js client) with 20+ modules.</li>
+    <li>Solo-designed and built Litmatch, an anonymous social platform (matching, chat, feed, mini-games, diamond/VIP economy), as a NestJS modular-monolith monorepo (Socket.IO, LiveKit SFU, Next.js) with 20+ modules.</li>
     <li>Solved the dual-write problem for diamond/VIP transactions with a transactional outbox: business writes commit atomically with an outbox row, then a relay job (Postgres FOR UPDATE SKIP LOCKED, safe across concurrent instances) publishes to Kafka and marks it sent - so pending events remain retryable after failures instead of being silently lost.</li>
+    <li>Built the matching engine as a sharded priority queue with a trust-score penalty and an idempotent diamond-priced boost, plus a two-sided confirm locking session and ticket in fixed order to avoid deadlock.</li>
   </ul>
 
   <div class="entry-header">
@@ -166,8 +168,7 @@ line-height: 1.17;
   </div>
   <div class="entry-link">GitHub: <a href="https://github.com/ducmanh001/mini-shop-api">https://github.com/ducmanh001/mini-shop-api</a> &nbsp;|&nbsp; Demo: <a href="https://mini-shop-api-production-e25a.up.railway.app/api-docs">https://mini-shop-api-production-e25a.up.railway.app/api-docs</a></div>
   <ul class="bullets">
-    <li>Solo-built a NestJS/TypeScript e-commerce backend covering auth, products, cart, checkout, orders, reviews, and admin management, with PostgreSQL/TypeORM migrations and Bull-queued email notifications; deployed to Railway with Docker and CI.</li>
-    <li>Implemented transactional checkout with ordered row locks to reduce deadlock risk and idempotency keys to prevent duplicate order creation on retries.</li>
+    <li>Solo-built a NestJS/TypeScript e-commerce backend covering auth, products, cart, checkout, orders, reviews, and admin management, with PostgreSQL/TypeORM migrations and Bull-queued email notifications, deployed to Railway with Docker and CI; checkout uses ordered row locks and idempotency keys to reduce deadlock risk and prevent duplicate orders on retry.</li>
   </ul>
 
   <div class="section-title">Education</div>
